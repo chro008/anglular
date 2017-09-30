@@ -1,4 +1,26 @@
-nav span {
-  cursor: pointer;
-  color: #1c94c4;
+.nav_container {
+  width: 120px;
+  float:left;
 }
+
+.container nav {
+  width: 120px;
+  background-color: #E2E2E2;
+  border-right: 1px;
+}
+
+.container .module_t {
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  font-size: 13px;
+  color: #2aa198;
+  border-bottom: 1px solid #CCC;
+}
+
+.router-container {
+  float:left;
+  margin-left: 12px;
+}
+

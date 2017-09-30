@@ -1,0 +1,20 @@
+.sfg_data_tb{
+
+}
+
+.sfg_data_tb thead tr {
+  height:28px;
+  line-height: 20px;
+  background-color: #E4E4E4;
+}
+
+.sfg_data_tb th {
+  min-width:90px;
+  border: 1px;
+}
+
+
+
+sfg_data_tb td {
+
+}

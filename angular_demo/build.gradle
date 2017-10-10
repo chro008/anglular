@@ -12,4 +12,6 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12',
     compile("org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE")
+    compile "mysql:mysql-connector-java:5.1.43"
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.7'
 }

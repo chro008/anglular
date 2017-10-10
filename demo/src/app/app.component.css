@@ -1,6 +1,6 @@
 .nav_container {
   width: 120px;
-  float:left;
+  float: left;
 }
 
 .container nav {
@@ -20,7 +20,7 @@
 }
 
 .router-container {
-  float:left;
+  float: left;
   margin-left: 12px;
 }
 

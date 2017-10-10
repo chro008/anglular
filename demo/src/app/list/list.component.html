@@ -1,31 +1,45 @@
 <div class="table_container">
   <table class="sfg_data_tb">
     <thead>
-      <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>age</th>
-        <th>city</th>
-        <th>config</th>
-      </tr>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>age</th>
+      <th>city</th>
+      <th>config</th>
+    </tr>
 
     </thead>
 
-    <tbody *ngIf="list&& list[0]">
-      <tr *ngFor="let item of list">
-        <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.age}}</td>
-        <td>{{item.city}}</td>
-        <td>删除</td>
-      </tr>
+    <tbody *ngIf="list&& list[0]&&!fresh">
+    <tr *ngFor="let item of list">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.age}}</td>
+      <td>{{item.city}}</td>
+      <td class="config-td" (click)="delete(item.id)"><span>删除</span></td>
+    </tr>
+    </tbody>
 
+    <tbody>
+    <tr *ngIf="fresh">
+      <td colspan="5">
+        <div class="data-buff">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+
+        </div>
+      </td>
+    </tr>
     </tbody>
 
   </table>
 
 </div>
 
-<app-page [page]="activePage" (next)="pageNext($event)">
+<app-page [page]="activePage" [total]="totalNum" [over]="listOver" (next)="pageNext($event)">
 
 </app-page>

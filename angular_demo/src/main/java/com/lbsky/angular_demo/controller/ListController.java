@@ -1,11 +1,10 @@
 package com.lbsky.angular_demo.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lbsky.angular_demo.bean.ListData;
 import com.lbsky.angular_demo.service.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/angular/demo")
@@ -16,11 +15,11 @@ public class ListController {
     ListService service;
 
     @RequestMapping(value = "/getList", method = RequestMethod.GET)
-    public List<ListData> get(@RequestParam int page) {
-        return service.get(page);
+    public JSONObject get(@RequestParam int page) {
+        return service.getWithTotal(page);
     }
 
-    @RequestMapping(value = "delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "add", method = RequestMethod.POST)
     public void add(@RequestBody ListData item) {
         System.out.println("request for add,item is:" + item.toString());
     }
@@ -28,6 +27,7 @@ public class ListController {
     @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable int id) {
         System.out.println("request for delete,id:" + id);
+        service.delete(id);
     }
 
 

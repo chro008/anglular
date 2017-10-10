@@ -39,7 +39,7 @@ public class ListData {
     }
 
     @Override
-    public String toString(){
-        return "id is " + id + "\nname is " + name + "\nage is " + age + "\ncity is "+ city;
+    public String toString() {
+        return "id is " + id + "\nname is " + name + "\nage is " + age + "\ncity is " + city;
     }
 }

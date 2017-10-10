@@ -22,5 +22,39 @@ ng serve
 
 ##创建spring-boot项目
  ###angular_demo；
-目的是测试angular的增删改查
+目的是测试angular的增删改查<br>
+
+建表、批量插入测试数据sql如下<br><br>
+drop table if exists list;<br>
+create table list(<br>
+id int(3) not null auto_increment,<br>
+name varchar(20) not null,<br>
+age int(3) not null,<br>
+city varchar(20) not null,<br>
+primary key(id)<br>
+);<br><br>
+
+drop PROCEDURE inserts; <br>
+truncate table list;<br>
+delimiter //<br><br>
+
+ create procedure inserts(n int)<br>
+ begin<br>
+		    declare i int default(1);<br>
+   declare name_ varchar(20);<br>
+   declare age_ int;<br>
+	 declare city_ varchar(20);<br>
+   while i<n do<br>
+		set name_=concat("name",i);<br>
+		set age_ = ROUND(rand()*10);<br>
+		set city_ = concat("city",i);<br>
+   insert into list (id,name,age,city) values(null,name_,age_,city_);<br>
+	 set i=i+1;<br>
+   end while;<br>
+ end //<br>
+
+call inserts(100);<br>
+select id,name,age,city from list;<br>
+
+
 

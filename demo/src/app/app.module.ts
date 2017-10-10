@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {HttpModule} from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListComponent } from './list/list.component';
 import { ChartComponent } from './chart/chart.component';
 import { SettingsComponent } from './settings/settings.component';
-import { TableComponent } from './list/table/table.component';
 import { PageComponent } from './list/page/page.component';
 
 export const ROUTES = [
@@ -25,11 +25,11 @@ export const ROUTES = [
     ListComponent,
     ChartComponent,
     SettingsComponent,
-    TableComponent,
     PageComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],

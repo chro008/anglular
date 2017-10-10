@@ -16,8 +16,8 @@ public class ListController {
     ListService service;
 
     @RequestMapping(value = "/getList", method = RequestMethod.GET)
-    public List<ListData> get() {
-        return service.get();
+    public List<ListData> get(@RequestParam int page) {
+        return service.get(page);
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.POST)

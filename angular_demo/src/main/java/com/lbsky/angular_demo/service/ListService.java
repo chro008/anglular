@@ -9,10 +9,12 @@ import java.util.List;
 @Service
 public class ListService {
 
-    public List<ListData> get(){
+    public List<ListData> get(int page){
         List<ListData> list = new ArrayList<>();
         ListData item;
-        for (int i = 0; i < 10; i++) {
+        int start = page * 10 + 1;
+        int end = start + 10;
+        for (int i = start; i < end; i++) {
             item = new ListData();
             item.setId(i);
             item.setName("name" + i);

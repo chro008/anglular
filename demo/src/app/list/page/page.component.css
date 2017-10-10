@@ -1,0 +1,12 @@
+.page_container{
+  height: 20px;
+  line-height:20px;
+  float: right;
+  margin:20px auto;
+  font-size: 12px;
+}
+
+.page_container div {
+  float: left;
+  margin-right:10px;
+}
